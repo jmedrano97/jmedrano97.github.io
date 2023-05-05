@@ -79,7 +79,7 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Portfoio Details</h2>
+          <h4>Mi Liga</h4>
           <ol>
             <li><a href="index.html">Home</a></li>
             <li>MiLiga Details</li>
@@ -96,40 +96,100 @@
         <div class="row gy-4">
 
           <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-2.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-3.jpg" alt="">
-                </div>
-
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
               </div>
-              <div class="swiper-pagination"></div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="assets/img/liga_captura.png" class="d-block w-100" alt="70">
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/img/excel.png" class="d-block w-100" alt="70">
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/img/matches.png" class="d-block w-100" alt="70">
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/img/posiciones.png" class="d-block w-100" alt="70">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
 
           <div class="col-lg-4">
             <div class="portfolio-info">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-              </ul>
+              <h3>Ver repositorio</h3>
+              <a href="https://github.com/jmedrano97/ligas_proyecto" class="btn btn-primary px-5"><i class="bx bxl-github"></i>Github</a>
             </div>
             <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
+              <h2>Detalles</h2>
               <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                Utilizando un template html de uso libre como punto de partida estoy desarrollando esta web. Para darle funcionalidad, he utilizado Python. Con Django, he desarrollado la gestión de usuarios, la autenticación, la gestión de equipos y la programación de partidos, etc. Para facilitar el proceso de descarga y configuración de mi proyecto, he utilizado la base de datos SQLite que viene integrada en el framework Django. 
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row ">
+          <h2>Detalles Tecnicos</h2>
+
+          <div class="col-lg-8">
+            <div id="carouselTecnicos" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselTecnicos" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselTecnicos" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselTecnicos" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="assets/img/transaction.png" class="d-block w-100" alt="70">
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/img/vistas.png" class="d-block w-100" alt="70">
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/img/jornada.png" class="d-block w-100" alt="70">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselTecnicos" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselTecnicos" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        
+          <div class="col-lg-4">
+
+            <div class="portfolio-description">
+              <p>
+                Además de utilizar vistas basadas en funciones y realizar CRUD's para implementar las funcionalidades de mi proyecto de liga de fútbol, también he creado un algoritmo personalizado para el emparejamiento de los encuentros. Este algoritmo utiliza técnicas de optimización para garantizar una distribución equitativa de los equipos y generar una lista de partidos que maximice la variedad y la emoción de la liga.
+              </p>
+              <p>
+                Por otro lado, para garantizar la integridad y la coherencia de los datos en la base de datos SQLite, he utilizado el sistema de transacciones de Django. De esta forma, cualquier modificación en la base de datos se ejecuta como una única operación atómica, lo que asegura que los cambios se completen en su totalidad o se deshagan por completo en caso de algún error o problema en el proceso.
               </p>
             </div>
           </div>

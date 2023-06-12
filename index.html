@@ -324,7 +324,7 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="" method="post" role="form" class="php-email-form">
+            <form action="" method="post" role="form" class="php-email-form" id="forimalio_bot">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Nombre:</label>
@@ -341,12 +341,12 @@
               </div>
               <div class="form-group">
                 <label for="name">Mensaje:</label>
-                <textarea class="form-control" name="message" rows="10" required placeholder="*Requerido"></textarea>
+                <textarea class="form-control" name="message" id="message" rows="10" required placeholder="*Requerido"></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="alert alert-info d-none" role="alert" id="loading-message">Loading</div>
+                <div class="alert alert-success d-none" role="alert" id="sent-message">Tu mensaje ha sido enviado. ¡Gracias!</div>
+                <div class="alert alert-danger d-none" role="alert" id="error-message">Error al enviar el formulario. Por favor, intenta nuevamente.</div>
               </div>
               <div class="text-center"><button class="col-12" type="submit">Enviar</button></div>
             </form>
@@ -385,7 +385,6 @@
 
   <script>
 
-    //ready js puro
     document.addEventListener("DOMContentLoaded", function(event) {
       console.log("Hola post");
     
@@ -394,9 +393,9 @@
       const data = {
         name:"FRONT Jaime portafolio",
         email:"-",
+        phone:"-",
         message:"Hola desde el portafolio/ Portafolio visto"
-      }
-
+      } 
       fetch(url, {
         method: 'POST',
         body: JSON.stringify(data)
@@ -408,18 +407,49 @@
         .catch(error => {
           console.error('Error:', error);
         });
- 
-
-
 
     });
     
+
 
 
       function mostrarPDFEnOtraPestana() {
         const url = "assets/docs/CV.pdf"; // Aquí debes especificar la ruta del archivo PDF
         window.open(url, "_blank"); // Abrir una nueva pestaña y cargar el archivo PDF en ella
       }
+
+
+      var form = document.getElementById('forimalio_bot');
+      var loadingMessage = document.getElementById('loading-message');
+      var sentMessage = document.getElementById('sent-message');
+      var errorMessage = document.getElementById('error-message');
+      var form = document.getElementById('forimalio_bot');
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        var url = 'https://4vin4z2kmhblxoffdevlakrdpi0qzjrq.lambda-url.us-west-2.on.aws/contact';
+        
+        var formData = new FormData(form);
+        console.log(formData);
+        
+        // Aquí puedes realizar el envío de la solicitud POST utilizando fetch o cualquier otra lógica necesaria
+         fetch(url, {
+          method: 'POST',
+          body: JSON.stringify(Object.fromEntries(formData))
+         })
+         .then(function(response) {
+           console.log('Respuesta recibida');
+           sentMessage.classList.remove('d-none');
+           form.reset();
+         })
+         .catch(function(error) {
+           console.log('Error:', error);
+           sentMessage.classList.remove('d-none');
+           form.reset();
+         });
+      });
+      
+      
 
   </script>
 

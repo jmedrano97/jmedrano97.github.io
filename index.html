@@ -295,15 +295,16 @@
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container">
-        <div class="section-title">
-          <h2>Contacto</h2>
-
-      </div>
-
+        <div class="container">
+          <div class="section-title">
+            <h2>Contacto</h2>
+  
+        </div>
         <div class="row" data-aos="fade-in">
 
-          <div class="col-lg-12 d-flex flex-column align-items-stretch">
+          <div class="col-lg-5 d-flex align-items-stretch">
             <div class="info">
+
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
@@ -312,20 +313,50 @@
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
+                <h4>Teléfono:</h4>
                 <p>8341044233</p>
               </div>
-            </div>
-            
-            <a href="#" class="btn  btn-primary" onclick="mostrarPDFEnOtraPestana()">Ver CV</a>
 
+              <a href="#" class="btn btn-primary col-12" onclick="mostrarPDFEnOtraPestana()">Ver CV</a>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Nombre:</label>
+                  <input type="text" name="name" class="form-control" id="name" required placeholder="*Requerido">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Email:</label>
+                  <input type="email" class="form-control" name="email" id="email" required placeholder="*Requerido">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">Teléfono:</label>
+                <input type="text" class="form-control" name="phone" id="phone">
+              </div>
+              <div class="form-group">
+                <label for="name">Mensaje:</label>
+                <textarea class="form-control" name="message" rows="10" required placeholder="*Requerido"></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button class="col-12" type="submit">Enviar</button></div>
+            </form>
           </div>
 
         </div>
 
       </div>
     </section><!-- End Contact Section -->
-
+    
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -356,19 +387,33 @@
 
     //ready js puro
     document.addEventListener("DOMContentLoaded", function(event) {
-      console.log("Hola");
-      var xhr = new XMLHttpRequest();
-      var url = 'https://4vin4z2kmhblxoffdevlakrdpi0qzjrq.lambda-url.us-west-2.on.aws/'; 
-      xhr.open('GET', url, true);
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          var response = JSON.parse(xhr.responseText);
-          console.log(response);
-        }
-      };
-      xhr.send();
+      console.log("Hola post");
+    
+      var url = 'https://4vin4z2kmhblxoffdevlakrdpi0qzjrq.lambda-url.us-west-2.on.aws/contact';
+    
+      const data = {
+        name:"FRONT Jaime portafolio",
+        email:"-",
+        message:"Hola desde el portafolio/ Portafolio visto"
+      }
+
+      fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(data)
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+ 
+
+
 
     });
+    
 
 
       function mostrarPDFEnOtraPestana() {
